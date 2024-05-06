@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url("coffeewhitebg.jpeg");
+            }
+            a:link{
+                text-decoration: none;
+            }
+            .nav_bar{
+                background-color: darkorange;
+                font-family: calibri;
+                position: fixed-top;
+                padding-right: 15px;
+                padding-left:15px ;
+            }
+            .nav_div{
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+            }
+            li{
+                display: inline-block;
+            }
+            li a{
+                color:white;
+                font-size: 20px;
+                font-weight: bold;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+            .logo a{
+                font-size: 40px;
+                font-weight: 750;
+                color: white;
+            }
+            
+            button a{
+                color: lightblue;
+                font-weight: bold;
+            }
+            
+        
+            #SIbutton{
+                background-color: black;
+                border-radius: 20px;
+                margin-left: 15px;
+                padding: 15px;
+                width: 80px;  
+            }
+            
+            #SUbutton{
+                background-color: black;
+                border-radius: 20px;
+                margin-left: 15px;
+                padding: 15px;
+                width: 80px;
+            }
+
+            #d01 {background-color:lightgreen;}
+            #d02 {background-color:lightgreen ;}
+
+            button
+            {background-color:red;
+            width: 200px;
+            height: 50px;
+            color:white;
+            }
+         </style>
+    </head>
+    <header>
+        <nav class="nav_bar"> <!-- Navigation Bar, use of class to style on css, use of div and use of list-->
+            <div class="nav_div">
+                <div class="logo"><a href="#">Arabica's Jaguar</a>
+                    
+                </div>
+                <ul>
+                    <li><a href="Arabica's Jaguar Home.html" class="nav_link">Home</a></li>
+                    <li><a href="Jaguar_Menu.html" class="nav_link2">Menu</a></li>
+                    <li><a href="cafeContact.html"class="nav_link2">Contact</a></li>
+                    <li><a href="index.html" class="nav_link3">Order</a></li>
+                    <button id="SIbutton"><a href="cafeSignIn.html" class="nav_link4">SignIn</a></button>
+                    <button id="SUbutton"><a href="cafeSignUp.html" class="nav_link5">SignUp</a></button>
+                </ul>
+            </div>
+        </nav>     
+    </header>    
+</head>
+
+<body>
+    <h2>Contact Information:</h2>
+    <h3 class="contact_info">Phone Number: (281) 586-9369<h3>
+    <h3 class="contact_info">Email:ArabicaCoffee@demo.com</h3>
+    <h3 class="contact_info">Address: UH at main campus or UH at Sugarland Campus</h3>
+
+    <div id="cont_feedback">
+        <h2>Feedback Survey & Newsletter subscription</h2>
+        <form>
+            <div id="d01">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    First Name:<input type="text" placeholder="Enter first name here" id="fname"> <br> <br>
+                    Last Name:<input type="text" placeholder="Enter last name here" id="lname"> <br> <br>
+                    Email Address:<input type="text" placeholder="Enter Email here" id="email1"> <br> <br>
+                    Home Address:<input type="text" placeholder="Enter address here" id="hadd1"> <br> <br>
+                </fieldset>
+            </div>
+            <div id="d02">
+                <fieldset>
+                <legend> How would you rate your experience in Arabica's Jaguar </legend>
+                <input type="radio" id="c01">Excellent <br> <br>
+                <input type="radio" id="c02">Good <br> <br> 
+                <input type="radio" id="c03">Decent <br> <br> 
+                <input type="radio" id="c04">Bad <br> <br>
+                Would you visit us again?
+                <input type="radio" id="r01">Yes
+                <input type="radio" id="r01">No
+                 <br> <br>
+                 <!--add dropdownlist-->
+                Please select the location you visited: 
+                <select id="location">
+                    <option value=""></option>
+                    <option value="Houston Campus"> Houston</option>
+                    <option value="Sugarland Sugarland"> Sugarland</option>
+                </select>
+                </fieldset>
+                <br>
+            <div id="d03">
+                <fieldset>
+                    <legend>Would you like to subscribe to our newslatter with the provided email?</legend>
+                    <input type="radio" id="r08">Yes<br><br>
+                    <input type="radio" id="r09">No<br><br>
+
+
+                </fieldset>
+                
+            </div>    
+                <br><br>
+                <button> Cancel</button>
+                    
+                <button> Submit</button>
+        </form>
+
+    </div>
+
+</body>
+
+
+
+
+
+</html>

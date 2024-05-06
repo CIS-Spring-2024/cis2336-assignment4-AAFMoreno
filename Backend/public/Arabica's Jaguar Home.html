@@ -1,0 +1,221 @@
+<html>
+<title>Arabica's Jaguar</title>
+
+<head>
+    <style>
+        body{
+            background-image: url("coffeewhitebg.jpeg");
+        }
+        a:link{
+            text-decoration: none;
+        }
+        .nav_bar{
+            background-color: darkorange;
+            font-family: calibri;
+            position: fixed-top;
+            padding-right: 15px;
+            padding-left:15px ;
+        }
+        .nav_div{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            display: inline-block;
+        }
+        li a{
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+        .logo a{
+            font-size: 40px;
+            font-weight: 750;
+            color: white;
+        }
+        
+        button a{
+            color: lightblue;
+            font-weight: bold;
+        }
+        
+    
+        #SIbutton{
+            background-color: black;
+            border-radius: 20px;
+            margin-left: 15px;
+            padding: 15px;
+            width: 80px;  
+        }
+        
+        #SUbutton{
+            background-color: black;
+            border-radius: 20px;
+            margin-left: 15px;
+            padding: 15px;
+            width: 80px;
+            
+        }
+        .slider_cont{
+            width: 85vmin;
+            overflow: hidden;
+            position:relative;
+            transform: translate(-50%,-50%);
+            top: 40%;
+            left: 30%;
+            border: 20px solid gray;
+            border-radius: 12px;
+        }
+        .slider{
+            width: 100%;
+            display: flex;
+            animation: slide 20s infinite;
+        }
+       img{
+            width: 100%;
+       }
+
+        @keyframes slide{
+            0% { transform: translateX(0%); }
+            25% { transform: translateX(0%); }
+            30% { transform: translateX(-100%); }
+            50% { transform: translateX(-100%); }
+            55% {transform: translateX(-200%);}
+            75% {transform: translateX(-200%);}
+            80% {transform: translateX(-300%);}
+            100% {transform: translateX(-300%);}
+        }
+        #h01 {text-align: center;}
+
+        #left_cont{
+            border: none;
+            height: auto;
+            width: 20%;
+            float: left;
+        }
+        #right_cont{
+            border: none;
+            height: auto;
+            width: 20%;
+            float:right;
+        }
+        #hours{
+            font-size: 20px;
+            padding: 0;
+        }
+
+        #location1{
+            background-color: chocolate;
+            border: solid grey;
+            border-width: 3px;
+            border-radius: 7px;
+            font-size: larger;
+        }
+
+        #location2{
+            background-color: chocolate;
+            border: solid grey;
+            border-width: 3px;
+            border-radius: 7px;
+            font-size: larger;
+        }
+        #order_now{
+            background-color: chocolate;
+            border: solid grey;
+            border-width: 3px;
+            border-radius: 7px;
+            font-size: larger;
+        }
+
+        
+
+    </style>
+
+    <header>
+        <nav class="nav_bar"> <!-- Navigation Bar, use of class to style on css, use of div and use of list-->
+            <div class="nav_div">
+                <div class="logo"><a href="#">Arabica's Jaguar</a>
+                    
+                </div>
+                <ul>
+                    <li><a href="Arabica's Jaguar Home.html" class="nav_link">Home</a></li>
+                    <li><a href="Jaguar_Menu.html" class="nav_link2">Menu</a></li>
+                    <li><a href="cafeContact 2.html"class="nav_link2">Contact</a></li>
+                    <li><a href="index.html" class="nav_link3">Order</a></li>
+                    <button id="SIbutton"><a href="cafeSignIn.html" class="nav_link4">SignIn</a></button>
+                    <button id="SUbutton"><a href="cafeSignUp.html" class="nav_link5">SignUp</a></button>
+                </ul>
+            </div>
+        </nav>     
+    </header>    
+</head>
+<body>
+    
+    
+    <!--Text of main body-->
+        
+    <div id="left_cont">
+        <h2>SELECT A LOCATION</h2>
+        <button id="location1"><a href="#">UH Sugarland  ></a></button>
+        <br><br>
+        <button id="location2"><a href="#">UH Main Campus  ></a></button>
+        <p style="color: rgba(0, 4, 5, 0.853);font-size: larger;font-weight: bold;">As partners of the University of Houston, you can find two convenient locations at the Sugarland Campus and Main Campus </p>
+        <br><br><br>
+        <h2>DO YOU WANT TO SKIP THE LINE?<h2>
+        <button id="order_now"><a href="index.html">ORDER NOW!</a></button>
+    </div>
+
+    <div id="right_cont">
+        <h2>The perfect spot to enjoy good coffee
+            and good food. Managed by an experienced
+             staff that is delighted to serve you!</h2>
+        <br><br>     
+        <h2>Hours<h2>
+            <ul id="hours">
+                <li>Monday/Friday ........ 8:00 - 6:00</li>
+                <br>
+                <li>Saturday ........ 10:00 - 4:00</li>
+                <br>
+                <li>Sundays ........ CLOSED</li>
+            </ul>
+
+    </div>
+
+
+
+    <h1 id="h01">Popular Items</h1>
+    <div class="slider_cont">  <!--Slideshow at homepeage-->
+            <div class="slider">
+                <img src="coffeeslide.jpeg">     
+                <img src="croissantslide.jpeg">
+                <img src="icedcoffeslide.png">
+                <img src="toastslide.jpeg">
+            </div>
+    </div>
+
+    <script>
+        setInterval(function(){
+            var slides = document.querySelectorAll('.slide');
+            var currentSl = document.querySelector('.slide:first-child');
+            var nextSl = currentSlide.nextElementSibling || slides[0];
+            currentSl.classList.remove('active');
+            nextSl.classList.add('active');
+        },50000);
+    </script>
+
+   
+
+    <footer style="background-color: orange;">
+        <hr>
+        Phone Number:(281) 586-9369
+        <br>
+        &copy; 2024 Arabica's Jaguar All Rights Reserved
+        <br>
+        <a href="#">ArabicaCoffee@demo.com</a>
+    </footer>
+</body>
+
+</html>
