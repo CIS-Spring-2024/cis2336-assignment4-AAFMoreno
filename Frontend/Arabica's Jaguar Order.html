@@ -1,0 +1,192 @@
+<html>
+
+<head>
+    <style>
+        body{
+            background-image: url("coffeewhitebg.jpeg");
+        }
+        a:link{
+            text-decoration: none;
+        }
+        .nav_bar{
+            background-color: darkorange;
+            font-family: calibri;
+            position: fixed-top;
+            padding-right: 15px;
+            padding-left:15px ;
+        }
+        .nav_div{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            display: inline-block;
+        }
+        li a{
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+        .logo a{
+            font-size: 40px;
+            font-weight: 750;
+            color: white;
+        }
+        
+        button a{
+            color: lightblue;
+            font-weight: bold;
+        }
+        
+
+        #SIbutton{
+            background-color: black;
+            border-radius: 20px;
+            margin-left: 15px;
+            padding: 15px;
+            width: 80px;  
+        }
+        
+        #SUbutton{
+            background-color: black;
+            border-radius: 20px;
+            margin-left: 15px;
+            padding: 15px;
+            width: 80px;
+            
+        }
+
+        .menu_image{
+            width: 300px;
+            height: auto;
+            border: solid greenyellow;
+            border-width: 8px;
+            border-radius: 8px;
+        }
+
+        #submitOrder{
+            background-color: red;
+            border: #ccc;
+            padding: 16px 32px;
+            font-size: larger;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            border: 4px solid greenyellow;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+        }
+    </style>
+        
+
+    <header>
+        <nav class="nav_bar"> <!-- Navigation Bar, use of class to style on css, use of div and use of list-->
+            <div class="nav_div">
+                <div class="logo"><a href="#">Arabica's Jaguar</a>
+                    
+                </div>
+                <ul>
+                    <li><a href="Arabica's Jaguar Home.html" class="nav_link">Home</a></li>
+                    <li><a href="cafeMenu.html" class="nav_link2">Menu</a></li>
+                    <li><a href="cafeContact.html"class="nav_link2">Contact</a></li>
+                    <li><a href="cafeAbout.html" class="nav_link3">About Us</a></li>
+                    <button id="SIbutton"><a href="cafeSignIn.html" class="nav_link4">SignIn</a></button>
+                    <button id="SUbutton"><a href="cafeSignUp.html" class="nav_link5">SignUp</a></button>
+                </ul>
+            </div>
+        </nav>     
+    </header>
+    
+</head>
+
+<body>
+    <!--Menu section: Show item images & button for user desired quantity-->
+    <h4>Select from menu:</h4>
+    <section>
+        <form id="orderForm">
+            <div class="menuItem">
+                <h3>Iced Latte</h3>
+                <label for="item1">Quantity:</label>
+                <input type="number" id="item1" name="Iced Latte" min="0" max="10" value="1">
+                <img src="icedcoffeslide.png" alt="" class="menu_image">
+                
+
+            </div>
+            <div class="menuItem">
+                <h3>Capuccino</h3>
+                <label for="item2">Quantity:</label>
+                <input type="number" id="item2" name="Cappucino" min="0" max="10" value="1">
+                <img src="coffee_slide1.jpeg" alt="" class="menu_image">
+                
+            </div>
+            <div class="menuItem">
+                <h3>Mocha</h3>
+                <label for="item3">Quantity:</label>
+                <input type="number" id="item3" name="Mocha" min="0" max="10" value="1">
+                <img src="coffeeslide.jpeg" alt="" class="menu_image">
+                
+            </div>
+            <div class="menuItem">
+                <h3>Croissant</h3>
+                <label for="item4">Quantity</label>
+                <input type="number" id="item4" name="Chocolate Croissant" min="0" max="10" value="1">
+                <img src="croissant_slide2.jpeg" alt="" class="menu_image">
+                
+            </div>
+            <div class="menuItem">
+                <h3>Chocolate Croissant</h3>
+                <label for="item5">Quantity:</label>
+                <input type="number" id="item5" name="Iced Latte" min="0" max="10" value="1">
+                <img src="croissantslide.jpeg" alt="" class="menu_image">
+                
+            </div>
+            <div class="menuItem">
+                <h3>Avocado Toast</h3>
+                <label for="item6">Quantity:</label>
+                <input type="number" id="item6" name="Avocado Toast" min="0" max="10" value="1">
+                <img src="toastslide.jpeg" alt="" class="menu_image">      
+            </div>
+            <br><br><br>
+            <button type="submit" id="submitOrder">Submit Order</button>
+        </form>
+
+        <div id="errorAlert"; style="color: red;"></div>
+
+        <script>
+            //Function to validate input from user, checks if quantity is within the specific acceptable range//
+                 document.getElementById("orderForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var validQty = true;
+            var errorAlert = "";
+            var inputIds = ['item1','item2','item3','item4','item5','item6']; 
+
+            inputIds.forEach(function (itemId) {
+                var quantity = parseInt(document.getElementById(itemId).value);
+                if (isNaN(quantity) || quantity < 1 || quantity > 10) {
+                    validQty = false;
+                    errorAlert += "Please enter a quantity between 0 and 10 for " + itemId + ".\n";
+                }
+            });
+
+            if (!validQty) {
+                // Error Notification in input box
+                document.getElementById("errorAlert").textContent = errorAlert;
+            } else {
+                // Notification of valid order
+                alert("Your order was submitted!");
+            }
+        });
+        </script>
+    </section>
+
+
+
+</body>
+
+
+
+</html>

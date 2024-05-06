@@ -1,0 +1,393 @@
+<html>
+<title>Arabica's Jaguar Menu</title>
+<head>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            transition: all .2s linear;
+        }
+
+         body{
+            /*background-color: aliceblue;*/
+            background-image: url("coffeewhitebg.jpeg");
+        }
+        a:link{
+            text-decoration: none;
+        }
+        .nav_bar{
+            background-color: darkorange;
+            font-family: calibri;
+            position: fixed-top;
+            padding-right: 15px;
+            padding-left:15px ;
+        }
+        .nav_div{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            display: inline-block;
+        }
+        li a{
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 40px;
+            margin-left: 40px;
+            margin-bottom: 40px;
+        }
+        .logo a{
+            font-size: 40px;
+            font-weight: 750;
+            color: white;
+        }
+        
+        button a{
+            color: lightblue;
+            font-weight: bold;
+        }
+        
+    
+        #SIbutton{
+            background-color: black;
+            border-radius: 20px;
+            margin-left: 15px;
+            padding: 15px;
+            width: 80px;  
+        }
+        
+        #SUbutton{
+            background-color: black;
+            border-radius: 20px;
+            margin-left: 15px;
+            padding: 15px;
+            width: 80px;
+            
+        }
+
+        .menu_cont{
+            background-color: aqua;
+            display: flex;
+            overflow: hidden;
+            justify-content:center;
+            align-items: flex-start;
+            padding: 20px 0px;
+            margin-top: 100px;
+            }
+
+            /* MENU STYLING SECTION */
+        
+        .menu_cont .menu_title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .menu_cont .item_container .item{
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            background: #fff;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+            outline: .1rem solid #ccc;
+            outline-offset: -1.5rem;
+            cursor: pointer;
+        }
+
+        .menu_cont .item_container .item:hover{
+            outline: .2rem solid black;
+            outline-offset: 0;
+        }
+        
+        .menu_cont .item_container .item img{
+            height: 25 rem;
+        }
+
+        .menu_cont .item_container .item:hover img{
+            transform: scale(.9);
+        }
+
+        .menu_cont .item_container .item h3{
+            padding: .5rem 0;
+            font-size: 2rem;
+            color: gray;
+        }
+
+        .menu_cont .item_container .item:hover h3{
+            color: greenyellow;
+        }
+
+        .menu_cont .item_container .item .price{
+            font-size: 2rem;
+            color: gray;
+        }
+
+        #menu_to_order{
+            background-color: red;
+            border: #ccc;
+            padding: 16px 32px;
+            font-size: larger;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            border: 4px solid greenyellow;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+        }
+        #menu_to_order:hover{
+            background-color: orange;
+        }
+
+        .dish-preview{
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-height: 100vh;
+            width: 100%;
+            background: rgba(0, 0, 0, 1);
+            display: none;
+            align-items:center;
+            justify-content: center;
+        }
+       
+        .dish-preview .preview{
+            display: none;
+            padding: 4rem;
+            text-align: center;
+            background: whitesmoke;
+            position: relative;
+            margin: 4rem;
+            width: 45rem;
+        }
+
+        .dish-preview .dish-preview.active{
+            display: inline-block;
+        }
+
+        .dish-preview .preview img{
+            height: 30rem;
+        }
+
+        .dish-preview .preview .fa-times{
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            cursor: pointer;
+            color: gray;
+            font-size: 5rem;
+        }
+        
+    </style>
+
+
+    <header>
+        <nav class="nav_bar"> <!-- Navigation Bar, use of class to style on css, use of div and use of list-->
+            <div class="nav_div">
+                <div class="logo"><a href="#">Arabica's Jaguar</a>
+                    
+                </div>
+                <ul>
+                    <li><a href="Arabica's Jaguar Home.html" class="nav_link">Home</a></li>
+                    <li><a href="cafeMenu.html" class="nav_link2">Menu</a></li>
+                    <li><a href="cafeContact.html"class="nav_link2">Contact</a></li>
+                    <li><a href="cafeAbout.html" class="nav_link3">About Us</a></li>
+                    <button id="SIbutton"><a href="cafeSignIn.html" class="nav_link4">SignIn</a></button>
+                    <button id="SUbutton"><a href="cafeSignUp.html" class="nav_link5">SignUp</a></button>
+                </ul>
+            </div>
+        </nav>     
+    </header>
+
+</head>
+
+
+
+
+<!--Menu Section-->
+<body> 
+<div class="menu_cont">
+    <h2 class="menu_title">MENU</h2>
+
+    <div class="item_container">
+        
+        <div class="item" data-name="dish1"> 
+            <img src="icedcoffeslide.png" alt="">
+            <h3>Iced Latte</h3>
+            <div class="price">$3.75</div>
+        </div>
+
+        <div class="item" data-name="dish2"> 
+            <img src="coffee_slide1.jpeg" alt="">
+            <h3>Capuccino</h3>
+            <div class="price">$3.75</div>
+        </div>
+
+        <div class="item" data-name="dish3"> 
+            <img src="coffeeslide.jpeg" alt="">
+            <h3>Mochas</h3>
+            <div class="price">$4.25</div>
+        </div>
+
+        <div class="item" data-name="dish4"> 
+            <img src="croissant_slide2.jpeg" alt="">
+            <h3>Croissant</h3>
+            <div class="price">$2.75</div>
+        </div>
+
+        <div class="item" data-name="dish5"> 
+            <img src="croissantslide.jpeg" alt="">
+            <h3>Chocolate Croissant</h3>
+            <div class="price">$3.50</div>
+        </div>
+
+        <div class="item" data-name="dish6"> 
+            <img src="toastslide.jpeg" alt="">
+            <h3>Avocado Toast</h3>
+            <div class="price">$4.75</div>
+        </div><br><br><br><br>
+        <button id="menu_to_order" onclick="window.location.href='Arabica\'s Jaguar Order.html'">Hungry? Order Now</button>
+        
+        
+    </div>
+
+</div>
+
+<div class="dish-preview">
+
+        <div class="preview" data-target="dish1">
+            <i class="fas fa-times"></i>"
+            <img src="icedcoffeslide.png" alt="" >
+            <h3>Iced Latte</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Iced Latte</p>
+            <div class="price">$3.75</div>
+            <div class="order&bag_buttons">
+                <a href="#" class="buy_now">Buy Now</a>
+                <br>
+                <a href="#" class="bag"> Add to shopping bag</a>
+            </div>
+        </div>
+
+
+        <div class="preview" data-target="dish2">
+            <i class="fas fa-times"></i>"
+            <img src="coffee_slide1.jpeg" alt="">
+            <h3>Capuccino</h3>
+            <p>Capuccino</p>
+            <div class="price">$3.75</div>
+            <div class="order&bag_buttons">
+                <a href="#" class="buy_now">Buy Now</a>
+                <br>
+                <a href="#" class="bag"> Add to shopping bag</a>
+            </div>
+        </div>
+
+    <div class="preview" data-target="dish3">
+        <i class="fas fa-times"></i>
+        <img src="coffeeslide.jpeg" alt="">
+        <h3>Mocha</h3>
+       
+        <p>Lorem ipsum</p>
+        <div class="price">$4.25</div>
+        <div class="order&bag_buttons">
+            <a href="#" class="buy_now">Buy Now</a>
+            <br>
+            <a href="#" class="bag"> Add to shopping bag</a>
+        </div>
+    </div>
+
+    <div class="preview" data-target="dish4">
+        <i class="fas fa-times"></i>
+        <img src="croissant_slide2.jpeg" alt="">
+        <h3>Croissant</h3>
+       
+        <p>Lorem ipsum</p>
+        <div class="price">$2.75</div>
+        <div class="order&bag_buttons">
+            <a href="#" class="buy_now">Buy Now</a>
+            <br>
+            <a href="#" class="bag"> Add to shopping bag</a>
+        </div>
+    </div>
+
+    <div class="preview" data-target="dish5">
+        <i class="fas fa-times"></i>"
+        <img src="croissantslide.jpeg" alt="">
+        <h3>Chocolate Croissant</h3>
+        
+        <p>Lorem ipsum</p>
+        <div class="price">$3.50</div>
+        <div class="order&bag_buttons">
+            <a href="#" class="buy_now">Buy Now</a>
+            <br>
+            <a href="#" class="bag"> Add to shopping bag</a>
+        </div>
+    </div>
+
+    <div class="preview" data-target="dish6">
+        <i class="fas fa-times"></i>
+        <img src="toastslide.jpeg" alt="">
+        <h3>Avocado Toast</h3>
+       
+        <p>Lorem ipsum</p>
+        <div class="price">$4.75</div>
+        <div class="order&bag_buttons">
+            <a href="#" class="buy_now">Buy Now</a>
+            <br>
+            <a href="#" class="bag"> Add to shopping bag</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+   
+    
+        
+        
+<script>
+    
+    let previewHolder = document.querySelector('.dish-preview');
+    let previewBox = previewHolder.querySelectorAll('.preview');
+
+    document.querySelectorAll('.item_container .item').forEach(product =>{
+        item.onclick = () =>{
+            previewHolder.style.display = "flex";
+            let name = item.getAttribute('data-name');
+            previewBox.forEach(preview =>{
+                let target = preview.getAttribute('data-target');
+                if(name === target){
+                    preview.classList.add('active');
+                }
+            });
+
+        };
+    });
+
+    previewBox.forEach(close => {
+        close.querySelector('.fa-times').onclick = () =>{
+            close.classList.remove('active');
+            previewHolder.style.display = "none";
+        };
+    });
+
+</script>
+
+</body>
+</html>
